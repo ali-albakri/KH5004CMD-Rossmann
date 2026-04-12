@@ -1,5 +1,5 @@
 # 📊 Rossmann Store Sales: 6-Week Forecasting & Driver Analysis (22.1)
-![Static Badge](https://img.shields.io/badge/ROSSMANN%20Sales-%20DATA SCIENCE-red)
+![Static Badge](https://img.shields.io/badge/ROSSMANN%20Sales-%20DATA%20SCIENCE-red)
 
 ## 🎯 Project Overview
 This project applies the end-to-end CRISP-DM lifecycle to build an automated machine learning pipeline. The primary objective is to forecast daily revenue for 1,115 Rossmann stores up to 6 weeks in advance, enabling highly accurate inventory and staffing optimization.
