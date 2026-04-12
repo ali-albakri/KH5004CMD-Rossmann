@@ -4,9 +4,12 @@ import joblib
 import os
 from processing import preprocess_store_data
 
-MODEL_PATH = '../models/rossmann_xgboost_final.pkl'
-RAW_DATA_PATH = '../data/raw/test.csv'
-OUTPUT_PATH = '../data/processed/final_6_week_forecast.csv'
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.dirname(BASE_DIR)
+
+MODEL_PATH = os.path.join(PROJECT_ROOT, 'models', 'rossmann_xgboost_final.pkl')
+RAW_DATA_PATH = os.path.join(PROJECT_ROOT, 'data', 'raw', 'test.csv')
+OUTPUT_PATH = os.path.join(PROJECT_ROOT, 'data', 'processed', 'final_6_week_forecast.csv')
 
 def main():
     print("=== Rossmann Batch Prediction Pipeline ===")
