@@ -18,7 +18,7 @@ def main():
     if not os.path.exists(MODEL_PATH):
         raise FileNotFoundError(f"Model not found at {MODEL_PATH}. Did you run Phase 4?")
     
-    print("Loading XGBoost model...")
+    print("Loading Tuned XGBoost model...")
     model = joblib.load(MODEL_PATH)
     
     # extract the exact column names the model expects
@@ -45,11 +45,15 @@ def main():
     # unsquash the log transform back to real currency
     real_predictions = np.expm1(log_predictions)
     
-    print("Formatting output...")
+    print("Formatting output and applying Business Rules...")
     output_df = pd.DataFrame({
         'Id': submission_ids,
-        'Forecasted_Sales': real_predictions
+        'Sales': real_predictions
     })
+    
+    # If the store is closed in the raw data, force the predicted sales to 0
+    if 'Open' in raw_df.columns:
+        output_df.loc[raw_df['Open'] == 0, 'Sales'] = 0
     
     output_df.to_csv(OUTPUT_PATH, index=False)
     print("Success!")
