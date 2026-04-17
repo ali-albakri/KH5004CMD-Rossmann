@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import re
 
 def preprocess_store_data(df, training_columns=None):
     df_clean = df.copy()
@@ -18,6 +19,9 @@ def preprocess_store_data(df, training_columns=None):
     # categorical encoding
     print("Encoding categorical variables...")
     df_encoded = pd.get_dummies(df_clean)
+    
+    # cleaning the column names so they exactly match the Phase 4 training data
+    df_encoded.columns = [re.sub(r'[^\w\s]', '', col).replace(' ', '_') for col in df_encoded.columns]
     
     # column alignment in the exact order
     if training_columns is not None:

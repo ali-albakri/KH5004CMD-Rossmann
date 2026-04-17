@@ -1,11 +1,11 @@
 # 📊 Rossmann Store Sales: 6-Week Forecasting & Driver Analysis (22.1)
-![Static Badge](https://img.shields.io/badge/ROSSMANN%20Sales-%20DATA SCIENCE-red)
+![Static Badge](https://img.shields.io/badge/ROSSMANN%20Sales-%20DATA-SCIENCE-red)
 
 ## 🎯 Project Overview
 This project applies the end-to-end CRISP-DM lifecycle to build an automated machine learning pipeline. The primary objective is to forecast daily revenue for 1,115 Rossmann stores up to 6 weeks in advance, enabling highly accurate inventory and staffing optimization.
 
 **Key Achievements:**
-* **Forecasting Accuracy:** Developed a tuned XGBoost Regressor that achieved a Root Mean Square Percentage Error (RMSPE) of **13.3%**, successfully beating the <15% business safety threshold.
+* **Forecasting Accuracy:** Utilized multiple models and the most efficient was the XGBoost Regressor which achieved a Root Mean Square Percentage Error (RMSPE) of **13.3%**, successfully beating the <15% business safety threshold.
 * **Business Insights:** Quantified the exact "marginal lift" of store promotions to validate marketing budgets and mapped out the revenue impact of competitor store proximity.
 * **Deployment:** Transitioned experimental Jupyter notebooks into a modular, production-ready Python batch-processing script.
 
@@ -23,7 +23,7 @@ This project applies the end-to-end CRISP-DM lifecycle to build an automated mac
 `conda activate rossmann_ds`
 
 2. Install dependencies:
-`pip install pandas numpy scikit-learn xgboost joblib ipykernel`
+`pip install pandas numpy scikit-learn xgboost lightgbm joblib ipykernel matplotlib seaborn`
 
 ## ⚙️ Pipeline Usage
 1. Ensure your raw input data (e.g., test.csv) is located inside the data/raw/ directory.
